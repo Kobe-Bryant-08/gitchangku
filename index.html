@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <!-- view 显示容器 -->
+    <div id="box">
+        <!-- false  //v-show -->
+        <h1 v-if='true'>{{msg}}</h1>
+        <h1>str的值是:{{str}}</h1>
+        <input type="text" v-model='str'>
+        <button @click='fn'>测试</button>
+
+    </div>
+
+    <script>
+        //vue的实例对象
+        var vm = new Vue({
+            el:'#box',
+            data:{
+                msg:'今天是晴天',
+                arr:['lily','lucy','linda'],
+                str:''
+            },
+            methods: {
+                fn:function(){
+                    this.msg = '明天是阴天';
+                    console.log("123");
+                }
+            },
+        })
+    </script>
+</body>
+</html>
